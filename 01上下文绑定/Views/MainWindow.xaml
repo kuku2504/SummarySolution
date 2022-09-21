@@ -8,27 +8,6 @@
         xmlns:local="clr-namespace:_01上下文绑定.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Style x:Key="ContentCtrl" TargetType="{x:Type ContentControl}">
-            <Setter Property="Background" Value="Red"/>
-            <Setter Property="Foreground" Value="Green"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ContentControl}">
-                        <Grid>
-                            <!--Keep the Ellipse a circle when ContentControl.Width is set.-->
-                            <Ellipse Width="{TemplateBinding Width}"
-                                     Height="{TemplateBinding Width}"
-                                     Fill="{TemplateBinding Background}"/>
-                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
     <Grid>
         <StackPanel>
             <Border BorderThickness="2" BorderBrush="Gold">
@@ -43,12 +22,10 @@
 
 
                     <Button Command="{Binding BtSchoolInfoCommand}">获取学校信息</Button>
+                    
                     <ContentControl Content="{Binding ClipContent}"></ContentControl>
                 </StackPanel>
             </Border>
-
-            <ContentControl Width="75" Style="{StaticResource ContentCtrl}" 
-                Content="Hello"/>
         </StackPanel>
     </Grid>
 </Window>

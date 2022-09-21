@@ -30,17 +30,20 @@ namespace _01上下文绑定.ViewModels
         }
         #endregion
 
-        private PersonalInfoViewModel personalInfo;
-        public PersonalInfoViewModel PersonalInfo
-        {
-            get { return personalInfo; }
-            set { SetProperty(ref personalInfo, value); }
-        }
+       
         public MainWindowViewModel(IContainerExtension container)
         {
             _container = container;
             Title = "测试";
             DescribeInfo = "测试信息的描述文字";
+        }
+
+
+        private PersonalInfoViewModel personalInfo;
+        public PersonalInfoViewModel PersonalInfo
+        {
+            get { return personalInfo; }
+            set { SetProperty(ref personalInfo, value); }
         }
 
         /// <summary>
@@ -56,7 +59,9 @@ namespace _01上下文绑定.ViewModels
         }
 
 
-
+        /// <summary>
+        /// 定义属性与字段
+        /// </summary>
         private SchoolInfoView clipContent;
         public SchoolInfoView ClipContent
         {
@@ -73,7 +78,7 @@ namespace _01上下文绑定.ViewModels
         private void ExecuteBtSchoolInfoCommand()
         {
             ClipContent = new SchoolInfoView();
-            ClipContent.DataContext = new SchoolInfoViewModel();
+            ClipContent.DataContext = new SchoolInfoViewModel();//把View与ViewModel进行上下文关联
         }
 
     }
