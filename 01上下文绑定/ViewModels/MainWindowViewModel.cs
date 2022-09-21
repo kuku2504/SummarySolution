@@ -81,5 +81,5 @@ namespace _01上下文绑定.ViewModels
             ClipContent.DataContext = new SchoolInfoViewModel();//把View与ViewModel进行上下文关联
         }
 
-    }
+    }    
 }

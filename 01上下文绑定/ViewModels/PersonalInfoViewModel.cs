@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using System.Collections.ObjectModel;
 
 namespace _01上下文绑定.ViewModels
 {
@@ -16,7 +17,7 @@ namespace _01上下文绑定.ViewModels
             get { return cloudCoinNum; }
             set { SetProperty(ref cloudCoinNum, value); }
         }
-
+        
         public PersonalInfoViewModel()
         {
         }
@@ -24,6 +25,7 @@ namespace _01上下文绑定.ViewModels
         {
             UnitName = "清华MBA";
             CloudCoinNum = "265";
+         
         }
     }
 }
